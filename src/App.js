@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import firebase from './firebase';
+import firebase from './components/firebase';
 import './App.css';
-import Header from './Header.js';
-import Description from './Description.js';
+import Header from './components/Header.js';
+import Description from './components/Description.js';
 import Story from './Story.js';
-import Form from './Form.js';
+import Form from './components/Form.js';
 
 class App extends Component {
   constructor() {

@@ -7,7 +7,6 @@ class Story extends Component {
 
     
     render() {
-        console.log(this.props.entries);
         return (
             <ul>
                 {this.props.entries.map((entry) => {

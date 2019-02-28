@@ -49,6 +49,7 @@ class Form extends Component {
             "body": this.state.bodyInput,
             "time": this.state.timestamp
         });
+
     }
 
 
@@ -58,6 +59,7 @@ class Form extends Component {
                 <p>Your name and submission will be public.</p>
                 <input type="text" name="authorInput" id="" placeholder="Name" onChange={this.handleChange} required/>
                 <input type="text" name="bodyInput" id="" placeholder="What happens next?" onChange={this.handleChange} required/>
+                <input type="checkbox" name="This is the end of the story" id=""/>
                 <button type="submit">Add to the story</button>
             </form>
         )
