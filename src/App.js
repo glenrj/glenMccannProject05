@@ -12,11 +12,21 @@ class App extends Component {
     this.state = {
       entries: [],
       submission: '',
-      activeStory: 'testStory'
+      activeStory: 'testStory',
+      // activeStory: ''
   }
 }
 
     componentDidMount() {
+      // const story = firebase.database().ref('inProgress');
+      // console.log(story);
+
+      // this.setState({
+      //   activeStory: story[0]
+      // })
+
+      // console.log(firebase.database().ref('inProgress').child().limitToFirst(1));
+
       const dbRef = firebase.database().ref(`inProgress/${this.state.activeStory}`);
 
       dbRef.on('value', response => {

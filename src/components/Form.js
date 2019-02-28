@@ -39,16 +39,14 @@ class Form extends Component {
         
         this.setState({
             timestamp: date
+        }, function(){
+            const dbRef = firebase.database().ref(`inProgress/${this.props.activeStory}`);
+            dbRef.push({
+                "author": this.state.authorInput,
+                "body": this.state.bodyInput,
+                "time": this.state.timestamp
+            });
         })
-
-        console.log(this.state.timestamp)
-        
-        const dbRef = firebase.database().ref(`inProgress/${this.props.activeStory}`);
-        dbRef.push({
-            "author": this.state.authorInput,
-            "body": this.state.bodyInput,
-            "time": this.state.timestamp
-        });
 
     }
 
