@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
+import './styles/story.css';
 
 class Story extends Component {
-    constructor() {
-        super()
-    }
-
-    
     render() {
         return (
             <ul>

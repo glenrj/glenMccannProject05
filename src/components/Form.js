@@ -8,7 +8,8 @@ class Form extends Component {
         this.state = {
             authorInput: '',
             bodyInput: '',
-            timestamp: ''
+            timestamp: '',
+            storyTitle: ''
         }
     }
 
@@ -21,11 +22,12 @@ class Form extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        
+
+        //GETTING DATE, MAKE THIS  IT'S OWN FUNCTION LATER //
         const now = new Date();
         let hour = now.getHours();
         let minutes = now.getMinutes();
-        if(minutes <= 9) {
+        if (minutes <= 9) {
             let newMinutes = ("0" + minutes).slice(-2);
             minutes = newMinutes;
         }
@@ -34,12 +36,13 @@ class Form extends Component {
         let month = months[monthIndex];
         let year = now.getFullYear();
         let day = now.getDate();
-        
+
         const date = `${hour}:${minutes}, ${month} ${day}, ${year}`
-        
+        ///END OF DATE STUFF //
+
         this.setState({
             timestamp: date
-        }, function(){
+        }, function () {
             const dbRef = firebase.database().ref(`inProgress/${this.props.activeStory}`);
             dbRef.push({
                 "author": this.state.authorInput,
@@ -47,19 +50,40 @@ class Form extends Component {
                 "time": this.state.timestamp
             });
         })
-
     }
-
 
     render() {
         return (
-            <form action="submit" onSubmit={this.handleSubmit}>
-                <p>Your name and submission will be public.</p>
-                <input type="text" name="authorInput" id="" placeholder="Name" onChange={this.handleChange} required/>
-                <input type="text" name="bodyInput" id="" placeholder="What happens next?" onChange={this.handleChange} required/>
-                <input type="checkbox" name="This is the end of the story" id=""/>
-                <button type="submit">Add to the story</button>
-            </form>
+            <div>
+                <form action="submit" onSubmit={this.handleSubmit}>
+                    <p>Your name and submission will be public.</p>
+                    <input
+                        type="text"
+                        name="authorInput"
+                        placeholder="Name"
+                        onChange={this.handleChange}
+                        value={this.state.authorInput}
+                        required />
+                    <input
+                        type="text"
+                        name="bodyInput"
+                        placeholder="What happens next?"
+                        onChange={this.handleChange}
+                        value={this.state.bodyInput}
+                        required />
+                    <button type="submit" >Add to the story</button>
+                </form>
+                <form action="submit" onSubmit={this.props.newStory}>
+                    <input
+                        type="text"
+                        name="storyTitle"
+                        placeholder="Story Title"
+                        value={this.state.storyTitle}
+                        onChange={this.handleChange} />
+                    <button type="submit">Finish the story</button>
+                </form>
+
+            </div>
         )
     }
 }

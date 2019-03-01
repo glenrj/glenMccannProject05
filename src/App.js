@@ -11,49 +11,78 @@ class App extends Component {
     super()
     this.state = {
       entries: [],
-      submission: '',
-      activeStory: 'testStory',
-      // activeStory: ''
-  }
-}
-
-    componentDidMount() {
-      // const story = firebase.database().ref('inProgress');
-      // console.log(story);
-
-      // this.setState({
-      //   activeStory: story[0]
-      // })
-
-      // console.log(firebase.database().ref('inProgress').child().limitToFirst(1));
-
-      const dbRef = firebase.database().ref(`inProgress/${this.state.activeStory}`);
-
-      dbRef.on('value', response => {
-        const updatedStory = [];
-        const data = response.val();
-
-        for (let entry in data) {
-          updatedStory.push({
-            key: entry,
-            submission: data[entry].body,
-            author: data[entry].author,
-            time: data[entry].time
-          })
-        }
-        this.setState({
-          entries: updatedStory,
-        })
-      })
+      activeStory: 'activeStory',
+      storyName: '',
     }
+  }
+  
+  // clearStory = () => {
+  //   const dbRef = firebase.database().ref("inProgress/activeStory");
+  //   console.log(dbRef);
+  //   // dbRef.;
+    
+  
+  //   dbRef.on('value', response => {
+  //     dbRef.push({
+  //       "newEntry": {
+  //         "author": 'Neverending Story',
+  //         "body": 'Start a new story below!',
+  //         "time": this.state.timestamp
+  //       }
+  //     })
+  //   })
+  // }
+
+  newStory = (e, ) => {
+    e.preventDefault();
+
+    const dbRef = firebase.database().ref(`completed`);
+    const storyName = this.state.activeStory;
+    console.log(storyName, this.state.entries);
+    dbRef.once('value', response => {
+      console.log(storyName);
+      dbRef.push({
+        [storyName]: this.state.entries
+      })
+    })
+    // this.clearStory();
+  }
+  
+  
+
+
+
+  //     
+
+  componentDidMount() {
+    const dbRef = firebase.database().ref(`inProgress/activeStory`);
+
+    dbRef.on('value', response => {
+      const updatedStory = [];
+      const data = response.val();
+
+      for (let entry in data) {
+        updatedStory.push({
+          key: entry,
+          submission: data[entry].body,
+          author: data[entry].author,
+          time: data[entry].time
+        })
+      }
+      this.setState({
+        entries: updatedStory,
+      })
+    })
+  }
+
 
   render() {
     return (
       <div className="App">
         <Header />
         <Description />
-        <Story entries={this.state.entries} submission={this.state.submission} activeStory={this.state.activeStory}/>
-        <Form entries={this.state.entries} submission={this.state.submission} activeStory={this.state.activeStory}/>
+        <Story entries={this.state.entries} activeStory={this.state.activeStory} />
+        <Form entries={this.state.entries} activeStory={this.state.activeStory} newStory={this.newStory} />
       </div>
     );
   }
