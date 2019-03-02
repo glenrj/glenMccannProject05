@@ -5,6 +5,7 @@ import Header from './components/Header.js';
 import Description from './components/Description.js';
 import Story from './Story.js';
 import Form from './components/Form.js';
+import Completed from './components/Completed.js';
 
 class App extends Component {
   constructor() {
@@ -13,46 +14,50 @@ class App extends Component {
       entries: [],
       activeStory: 'activeStory',
       storyName: '',
+      titleArray: []
     }
   }
-  
-  // clearStory = () => {
-  //   const dbRef = firebase.database().ref("inProgress/activeStory");
-  //   console.log(dbRef);
-  //   // dbRef.;
-    
-  
-  //   dbRef.on('value', response => {
-  //     dbRef.push({
-  //       "newEntry": {
-  //         "author": 'Neverending Story',
-  //         "body": 'Start a new story below!',
-  //         "time": this.state.timestamp
-  //       }
-  //     })
-  //   })
-  // }
 
-  newStory = (e, ) => {
-    e.preventDefault();
+  clearStory = () => {
+    const dbRef = firebase.database().ref("inProgress/activeStory");
+    dbRef.once('value', response => {
+      let data = response.val();
+      for (let entry in data) {
+        entry.remove();
+      }
+    });
+  }
+
+  newStory = () => {
+    //add new story title to array of titles
+    let completedStories = this.state.titleArray;
+    const storyName = this.state.storyName;
+    completedStories.push(storyName);
+    this.setState({
+      titleArray: completedStories
+    })
+
+    const titleRef = firebase.database().ref("titles");
+    titleRef.update(this.state.titleArray);
 
     const dbRef = firebase.database().ref(`completed`);
-    const storyName = this.state.activeStory;
-    console.log(storyName, this.state.entries);
     dbRef.once('value', response => {
-      console.log(storyName);
       dbRef.push({
         [storyName]: this.state.entries
       })
     })
     // this.clearStory();
   }
-  
-  
 
+  getTitle = (e, title) => {
+    e.preventDefault();
 
-
-  //     
+    this.setState({
+      storyName: title
+    }, function () {
+      this.newStory();
+    })
+  }
 
   componentDidMount() {
     const dbRef = firebase.database().ref(`inProgress/activeStory`);
@@ -70,9 +75,21 @@ class App extends Component {
         })
       }
       this.setState({
-        entries: updatedStory,
+        entries: updatedStory
       })
     })
+
+    const titleRef = firebase.database().ref("titles");
+
+    titleRef.once('value', response => {
+      const data = response.val();
+      
+      this.setState({
+        titleArray: data
+      })
+    })
+
+    
   }
 
 
@@ -82,7 +99,8 @@ class App extends Component {
         <Header />
         <Description />
         <Story entries={this.state.entries} activeStory={this.state.activeStory} />
-        <Form entries={this.state.entries} activeStory={this.state.activeStory} newStory={this.newStory} />
+        <Form entries={this.state.entries} activeStory={this.state.activeStory} newStory={this.getTitle} />
+        <Completed titles={this.state.titleArray} />
       </div>
     );
   }

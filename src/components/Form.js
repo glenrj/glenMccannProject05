@@ -49,6 +49,13 @@ class Form extends Component {
                 "body": this.state.bodyInput,
                 "time": this.state.timestamp
             });
+
+            this.setState({
+                authorInput: '',
+                bodyInput: '',
+                storyTitle: '',
+
+            })
         })
     }
 
@@ -73,13 +80,14 @@ class Form extends Component {
                         required />
                     <button type="submit" >Add to the story</button>
                 </form>
-                <form action="submit" onSubmit={this.props.newStory}>
+                <form action="submit" onSubmit={(e) => this.props.newStory(e, this.state.storyTitle)}>
                     <input
                         type="text"
                         name="storyTitle"
                         placeholder="Story Title"
                         value={this.state.storyTitle}
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        required />
                     <button type="submit">Finish the story</button>
                 </form>
 
