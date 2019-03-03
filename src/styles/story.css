@@ -8,24 +8,30 @@ li {
     width: 90%;
     max-width: 800px;
     margin-bottom: 10px;
+    padding: 25px;
 }
 
 li:nth-child(odd) {
-    background: #f3eaf4;
+    background: #f3eaf4e7;
 }
 
 li:nth-child(even) {
-    background: #eadde1;
+    background: #eadde1e7;
 }
 
 p.body {
     padding-top: 5px;
+    color: black;
+    text-align: left;
 }
 
 p.attribution {
     text-align: right;
-    margin-right: 2.5%;
     opacity: 0.5;
     color: #463f3a;
     padding-top: 10px;
+}
+
+ul {
+    padding: 0;
 }

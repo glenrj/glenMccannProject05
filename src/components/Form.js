@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import firebase from './firebase.js';
-
+import './../styles/form.css';
 
 class Form extends Component {
     constructor() {
@@ -61,27 +61,32 @@ class Form extends Component {
 
     render() {
         return (
-            <div>
+            <div className="formContainer">
+                <div className="form">
                 <form action="submit" onSubmit={this.handleSubmit}>
                     <p>Your name and submission will be public.</p>
                     <input
-                        type="text"
-                        name="authorInput"
-                        placeholder="Name"
-                        onChange={this.handleChange}
-                        value={this.state.authorInput}
-                        required />
-                    <input
+                        className="storyField"
                         type="text"
                         name="bodyInput"
                         placeholder="What happens next?"
                         onChange={this.handleChange}
                         value={this.state.bodyInput}
                         required />
+                    <input
+                        className="smallField"
+                        type="text"
+                        name="authorInput"
+                        placeholder="Name"
+                        onChange={this.handleChange}
+                        value={this.state.authorInput}
+                        required />
                     <button type="submit" >Add to the story</button>
                 </form>
                 <form action="submit" onSubmit={(e) => this.props.newStory(e, this.state.storyTitle)}>
+                <p>If there is nothing left to add, you can instead choose to save this story under a name and add it to the collection. A new story will begin.</p>
                     <input
+                        className="smallField"
                         type="text"
                         name="storyTitle"
                         placeholder="Story Title"
@@ -90,6 +95,7 @@ class Form extends Component {
                         required />
                     <button type="submit">Finish the story</button>
                 </form>
+                </div>
 
             </div>
         )

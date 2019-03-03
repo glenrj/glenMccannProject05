@@ -1,4 +1,16 @@
 .App {
+  margin: 0 auto;
+  padding: 1px;
+  min-height: 100vh;
+  background: url(assets/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+
+  font-size: 125%;
+  color: white;
+}
+
+.App {
   text-align: center;
 }
 

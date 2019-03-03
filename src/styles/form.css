@@ -1,0 +1,71 @@
+form {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+form p {
+    color: black;
+    text-align: left;
+}
+
+form input[type=text] {
+    width: 100%;
+    border: 1px solid peru;
+    color: black;
+    font-size: 1rem;
+    padding: 5px;
+    margin-bottom: 1.5%;
+}
+
+.storyField {
+    min-height: 200px;
+    padding: none;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+
+.formContainer {
+    margin: 50px auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: 5px solid peru;
+    padding: 20px 0;
+}
+
+.form {
+    width: 90%;
+    /* margin: 10px; */
+}
+
+input[type=text].smallField {
+    display: inline-block;
+    width: 49%;
+}
+
+button {
+    width: 45%;
+    border: 2px solid peru;
+    border-radius: 5px;
+    /* padding: 5px; */
+    background: none;
+    font-size: 1rem;
+    transition: 0.2s;
+    /* height: 100%; */
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: peru;
+    box-shadow: 5px 5px 5px lightgrey;
+    color: white;
+    /* border: 2px solid white; */
+}

@@ -20,12 +20,13 @@ class App extends Component {
 
   clearStory = () => {
     const dbRef = firebase.database().ref("inProgress/activeStory");
-    dbRef.once('value', response => {
-      let data = response.val();
-      for (let entry in data) {
-        entry.remove();
-      }
-    });
+    dbRef.remove();
+
+    // dbRef.push({
+    //   "author": "Sylvia Plath",
+    //   "body": "“And by the way, everything in life is writable about if you have the outgoing guts to do it, and the imagination to improvise. The worst enemy to creativity is self-doubt.”",
+    //   "time": 'The Unabridged Journals of Sylvia Plath'
+    // })
   }
 
   newStory = () => {
@@ -40,13 +41,14 @@ class App extends Component {
     const titleRef = firebase.database().ref("titles");
     titleRef.update(this.state.titleArray);
 
-    const dbRef = firebase.database().ref(`completed`);
+    const dbRef = firebase.database().ref("completed");
     dbRef.once('value', response => {
       dbRef.push({
         [storyName]: this.state.entries
       })
     })
-    // this.clearStory();
+
+    this.clearStory();
   }
 
   getTitle = (e, title) => {
