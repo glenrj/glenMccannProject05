@@ -66,20 +66,23 @@ class Form extends Component {
                 <div className="form">
                 <form action="submit" onSubmit={this.handleSubmit}>
                     <p>Your name and submission will be public.</p>
+                    <label htmlFor="bodyInput" class="visuallyHidden">Story Submission:</label>
                     <textarea
                         className="storyField"
-                        // type="textarea"
                         name="bodyInput"
+                        id="bodyInput"
                         placeholder="What happens next?"
                         onChange={this.handleChange}
                         value={this.state.bodyInput}
                         required
                         maxlength="500"
                          />
+                         <label htmlFor="authorInput" class="visuallyHidden">Your Name:</label>
                     <input
                         className="smallField"
                         type="text"
                         name="authorInput"
+                        id="authorInput"
                         placeholder="Name"
                         onChange={this.handleChange}
                         value={this.state.authorInput}
@@ -88,10 +91,12 @@ class Form extends Component {
                 </form>
                 <form action="submit" onSubmit={(e) => this.props.newStory(e, this.state.storyTitle)}>
                 <p>If there is nothing left to add, you can instead choose to give this story a name, and begin a new story from scratch.</p>
+                <label htmlFor="storyTitle" class="visuallyHidden">Story Name:</label>
                     <input
                         className="smallField"
                         type="text"
                         name="storyTitle"
+                        id="storyTitle"
                         placeholder="Story Title"
                         value={this.state.storyTitle}
                         onChange={this.handleChange}
