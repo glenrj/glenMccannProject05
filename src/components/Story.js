@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './../styles/story.css';
 
+// story section
 class Story extends Component {
     render() {
         return (
             <section className="story">
                 <ul>
+                    {/* map over array of storys to print each entry object */}
                     {this.props.entries.map((entry) => {
                         return (
                             <li key={entry.key}>

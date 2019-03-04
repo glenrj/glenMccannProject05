@@ -1,8 +1,24 @@
+/* form section styles */
 .formSection {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 25px;
+}
+
+.formContainer {
+    max-width: 800px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.75);
+    border: 5px solid #afa9d3;
+    padding: 20px 0;
+}
+/* form styles */
+.form {
+    width: 90%;
 }
 
 form {
@@ -21,6 +37,7 @@ form p {
     text-align: left;
 }
 
+/* input field styles */
 form input[type=text],
 form textarea {
     width: 100%;
@@ -37,29 +54,17 @@ textarea {
     resize: none;
 }
 
+:required {
+    border: 1px solid #5e0000;
+    box-shadow: none;
+
+}
+
 .storyField {
     min-height: 200px;
     padding: none;
     align-items: flex-start;
     margin-bottom: 10px;
-}
-
-
-.formContainer {
-    /* margin: 50px auto; */
-    max-width: 800px;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.75);
-    border: 5px solid #afa9d3;
-    padding: 20px 0;
-}
-
-.form {
-    width: 90%;
-    /* margin: 10px; */
 }
 
 input[type=text].smallField {
@@ -68,15 +73,14 @@ input[type=text].smallField {
     margin: 0;
 }
 
+/* buttons */
 button {
     width: 45%;
     border: 2px solid #5e0000;
     border-radius: 5px;
-    /* padding: 5px; */
     background: none;
     font-size: 1rem;
     transition: 0.2s;
-    /* height: 100%; */
     text-transform: uppercase;
     color: #5e0000;
     font-family: 'Lato', sans-serif;
@@ -84,11 +88,10 @@ button {
 
 button:hover {
     background: #5e0000;
-    /* box-shadow: 5px 5px 5px lightgrey; */
     color: white;
-    /* border: 2px solid white; */
 }
 
+/* media queries */
 @media (max-width: 400px) {
     p {
         font-size: 1rem;

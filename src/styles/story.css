@@ -1,10 +1,16 @@
+/* story section styles */
+
 .story {
-    /* background: url(../assets/story-background.jpg); */
     background-size: cover;
     margin: 0;
     padding: 5% 10%;
 }
 
+/* entry styles */
+ul {
+    padding: 0;
+    margin: 0;
+}
 
 li {
     font-family: 'Lato', sans-serif;
@@ -27,6 +33,7 @@ li:nth-child(even) {
     background: rgba(175, 169, 211, 0.5);
 }
 
+/* story styles */
 p.body {
     color: #353535;
     padding-top: 5px;
@@ -35,6 +42,7 @@ p.body {
     line-height: 1.6;
 }
 
+/* attribution styles */
 p.attribution {
     text-align: right;
     opacity: 0.5;
@@ -43,11 +51,8 @@ p.attribution {
     margin: 0;
 }
 
-ul {
-    padding: 0;
-    margin: 0;
-}
 
+/* media queries */
 @media (max-width: 400px) {
     p {
         font-size: 1rem;
