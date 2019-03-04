@@ -1,14 +1,14 @@
 {
-  "main.css": "/project05/static/css/main.f1e02036.chunk.css",
-  "main.js": "/project05/static/js/main.0bdc50b0.chunk.js",
-  "main.js.map": "/project05/static/js/main.0bdc50b0.chunk.js.map",
-  "runtime~main.js": "/project05/static/js/runtime~main.d1dcfe99.js",
-  "runtime~main.js.map": "/project05/static/js/runtime~main.d1dcfe99.js.map",
-  "static/js/2.093252b4.chunk.js": "/project05/static/js/2.093252b4.chunk.js",
-  "static/js/2.093252b4.chunk.js.map": "/project05/static/js/2.093252b4.chunk.js.map",
-  "index.html": "/project05/index.html",
-  "precache-manifest.ffd420b3d361a3dfd43fe69f321cb447.js": "/project05/precache-manifest.ffd420b3d361a3dfd43fe69f321cb447.js",
-  "service-worker.js": "/project05/service-worker.js",
-  "static/css/main.f1e02036.chunk.css.map": "/project05/static/css/main.f1e02036.chunk.css.map",
-  "static/media/App.css": "/project05/static/media/story-background.b49c07ff.jpg"
+  "main.css": "/glenMccannProject05/static/css/main.223abb92.chunk.css",
+  "main.js": "/glenMccannProject05/static/js/main.f8bc658f.chunk.js",
+  "main.js.map": "/glenMccannProject05/static/js/main.f8bc658f.chunk.js.map",
+  "runtime~main.js": "/glenMccannProject05/static/js/runtime~main.7ddfb5f3.js",
+  "runtime~main.js.map": "/glenMccannProject05/static/js/runtime~main.7ddfb5f3.js.map",
+  "static/js/2.3f8759bc.chunk.js": "/glenMccannProject05/static/js/2.3f8759bc.chunk.js",
+  "static/js/2.3f8759bc.chunk.js.map": "/glenMccannProject05/static/js/2.3f8759bc.chunk.js.map",
+  "index.html": "/glenMccannProject05/index.html",
+  "precache-manifest.a62b0e1c08c924a0d97f95f16ef02914.js": "/glenMccannProject05/precache-manifest.a62b0e1c08c924a0d97f95f16ef02914.js",
+  "service-worker.js": "/glenMccannProject05/service-worker.js",
+  "static/css/main.223abb92.chunk.css.map": "/glenMccannProject05/static/css/main.223abb92.chunk.css.map",
+  "static/media/App.css": "/glenMccannProject05/static/media/story-background.b49c07ff.jpg"
 }
