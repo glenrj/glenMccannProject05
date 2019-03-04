@@ -15,9 +15,7 @@ ul {
 li {
     font-family: 'Lato', sans-serif;
     list-style: none;
-    border: 1px dotted #463f3a;
-    border-left: none;
-    border-right: none;
+    border: 1px dotted #5C6851;
     margin: 0 auto;
     width: 90%;
     max-width: 800px;

@@ -15,12 +15,12 @@ h1 {
     font-family: 'Amatic SC', sans-serif;
     font-size: 5rem;
     padding: 15px;
-    color: #5e0000;
+    color: #5C6851;
 }
 
 /* media queries */
 @media (max-width: 400px) {
     h1 {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 }

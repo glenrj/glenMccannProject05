@@ -6,7 +6,7 @@ class Header extends Component {
     render() {
         return (
         <header>
-            <h1>Your Neverending Story</h1>
+            <h1>Your Story</h1>
         </header>
         )
     }

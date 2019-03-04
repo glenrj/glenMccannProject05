@@ -81,7 +81,7 @@ class Form extends Component {
                         <form action="submit" onSubmit={this.handleSubmit}>
                             <p>Your name and submission will be public.</p>
                             {/* sotry input */}
-                            <label htmlFor="bodyInput" class="visuallyHidden">Story Submission:</label>
+                            <label htmlFor="bodyInput" className="visuallyHidden">Story Submission:</label>
                             <textarea
                                 className="storyField"
                                 name="bodyInput"
@@ -90,10 +90,10 @@ class Form extends Component {
                                 onChange={this.handleChange}
                                 value={this.state.bodyInput}
                                 required
-                                maxlength="500"
+                                maxLength="500"
                             />
                             {/* author input */}
-                            <label htmlFor="authorInput" class="visuallyHidden">Your Name:</label>
+                            <label htmlFor="authorInput" className="visuallyHidden">Your Name:</label>
                             <input
                                 className="smallField"
                                 type="text"
@@ -110,7 +110,7 @@ class Form extends Component {
                         <form action="submit" onSubmit={(e) => this.props.newStory(e, this.state.storyTitle)}>
                             <p>If there is nothing left to add, you can instead choose to give this story a name, and begin a new story from scratch.</p>
                             {/* story title input */}
-                            <label htmlFor="storyTitle" class="visuallyHidden">Story Name:</label>
+                            <label htmlFor="storyTitle" className="visuallyHidden">Story Name:</label>
                             <input
                                 className="smallField"
                                 type="text"

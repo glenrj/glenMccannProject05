@@ -41,10 +41,11 @@ form p {
 form input[type=text],
 form textarea {
     width: 100%;
-    border: 1px solid #5e0000;
+    border: 1px solid #5C6851;
     color: black;
     font-size: 1rem;
     padding: 5px;
+    padding-left: 10px;
     margin-bottom: 1.5%;
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
@@ -55,7 +56,7 @@ textarea {
 }
 
 :required {
-    border: 1px solid #5e0000;
+    border: 1px solid #5C6851;
     box-shadow: none;
 
 }
@@ -64,7 +65,7 @@ textarea {
     min-height: 200px;
     padding: none;
     align-items: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 input[type=text].smallField {
@@ -76,18 +77,18 @@ input[type=text].smallField {
 /* buttons */
 button {
     width: 45%;
-    border: 2px solid #5e0000;
+    border: 2px solid #5C6851;
     border-radius: 5px;
     background: none;
     font-size: 1rem;
     transition: 0.2s;
     text-transform: uppercase;
-    color: #5e0000;
+    color: #5C6851;
     font-family: 'Lato', sans-serif;
 }
 
 button:hover {
-    background: #5e0000;
+    background: #5C6851;
     color: white;
 }
 
