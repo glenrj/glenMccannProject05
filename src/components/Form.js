@@ -108,7 +108,7 @@ class Form extends Component {
                         </form>
                         {/* new story form */}
                         <form action="submit" onSubmit={(e) => this.props.newStory(e, this.state.storyTitle)}>
-                            <p>If there is nothing left to add, you can instead choose to give this story a name, and begin a new story from scratch.</p>
+                            <p>If there is nothing left to add, you can instead choose to give this story a name before wiping the slate clean and beginning a new one.</p>
                             {/* story title input */}
                             <label htmlFor="storyTitle" className="visuallyHidden">Story Name:</label>
                             <input

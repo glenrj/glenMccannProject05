@@ -35,6 +35,7 @@ form {
 form p {
     color: black;
     text-align: left;
+    line-height: 1.6;
 }
 
 /* input field styles */
