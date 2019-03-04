@@ -61,18 +61,21 @@ class Form extends Component {
 
     render() {
         return (
+            <section className="formSection">
             <div className="formContainer">
                 <div className="form">
                 <form action="submit" onSubmit={this.handleSubmit}>
                     <p>Your name and submission will be public.</p>
-                    <input
+                    <textarea
                         className="storyField"
-                        type="text"
+                        // type="textarea"
                         name="bodyInput"
                         placeholder="What happens next?"
                         onChange={this.handleChange}
                         value={this.state.bodyInput}
-                        required />
+                        required
+                        maxlength="500"
+                         />
                     <input
                         className="smallField"
                         type="text"
@@ -84,7 +87,7 @@ class Form extends Component {
                     <button type="submit" >Add to the story</button>
                 </form>
                 <form action="submit" onSubmit={(e) => this.props.newStory(e, this.state.storyTitle)}>
-                <p>If there is nothing left to add, you can instead choose to save this story under a name and add it to the collection. A new story will begin.</p>
+                <p>If there is nothing left to add, you can instead choose to give this story a name, and begin a new story from scratch.</p>
                     <input
                         className="smallField"
                         type="text"
@@ -98,6 +101,7 @@ class Form extends Component {
                 </div>
 
             </div>
+            </section>
         )
     }
 }

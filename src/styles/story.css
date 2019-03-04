@@ -1,5 +1,13 @@
+.story {
+    /* background: url(../assets/story-background.jpg); */
+    background-size: cover;
+    margin: 0;
+    padding: 5% 10%;
+}
+
 
 li {
+    font-family: 'Lato', sans-serif;
     list-style: none;
     border: 1px dotted #463f3a;
     border-left: none;
@@ -8,30 +16,40 @@ li {
     width: 90%;
     max-width: 800px;
     margin-bottom: 10px;
-    padding: 25px;
+    padding: 10px 25px;
 }
 
 li:nth-child(odd) {
-    background: #f3eaf4e7;
+    background: #dedcc391;
 }
 
 li:nth-child(even) {
-    background: #eadde1e7;
+    background: rgba(175, 169, 211, 0.5);
 }
 
 p.body {
+    color: #353535;
     padding-top: 5px;
-    color: black;
     text-align: left;
+    margin: 0;
+    line-height: 1.6;
 }
 
 p.attribution {
     text-align: right;
     opacity: 0.5;
-    color: #463f3a;
-    padding-top: 10px;
+    color: #353535;
+    padding-top: 20px;
+    margin: 0;
 }
 
 ul {
     padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 400px) {
+    p {
+        font-size: 1rem;
+    }
 }

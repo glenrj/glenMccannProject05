@@ -1,0 +1,21 @@
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6;
+}
+
+.content {
+    /* background: #353535; */
+    color: #353535;
+    padding: 5%;
+    max-width: 65%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.content p {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+}

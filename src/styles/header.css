@@ -1,0 +1,28 @@
+header {
+    /* background: url(../assets/background.jpg); */
+    background-size: cover;
+    background-position: center;
+    height:30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 125%; */
+}
+
+h1 {
+    /* padding-top: 5%; */
+    margin: 0px;
+    color: white;
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 5rem;
+    /* background: rgba(255, 255, 255, 0.65); */
+    padding: 15px;
+    /* border: 2px solid #353535; */
+    color: #5e0000;
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 3rem;
+    }
+}

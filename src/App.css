@@ -1,13 +1,14 @@
 .App {
   margin: 0 auto;
-  padding: 1px;
+  /* padding: 1px; */
   min-height: 100vh;
-  background: url(assets/background.jpg);
+  background:linear-gradient(0deg,rgba(255,255,255,0.3),rgba(255, 255, 255, 0.3)),url(assets/story-background.jpg);
   background-size: cover;
+  /* object-fit: contain; */
   background-attachment: fixed;
+  background-position: center;
 
   font-size: 125%;
-  color: white;
 }
 
 .App {
