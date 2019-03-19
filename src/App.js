@@ -38,13 +38,15 @@ class App extends Component {
 
     const dbRef = firebase.database().ref("completed");
     dbRef.once('value', response => {
-      console.log(storyName);
+      // console.log(storyName);
+      console.log(this.state.entries)
       dbRef.push({
-        [storyName]: this.state.entries
+        [storyName]: [this.state.entries]
       })
+    }, function() {
+      this.clearStory();
     })
 
-    this.clearStory();
   }
 
   //get the title from user input, called on submission of form component

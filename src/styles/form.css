@@ -52,6 +52,11 @@ form textarea {
     line-height: 1.6;
 }
 
+form input[type=text]:focus,
+form textarea:focus {
+    border: 2px solid #afa9d3;
+}
+
 textarea {
     resize: none;
 }
@@ -88,7 +93,8 @@ button {
     font-family: 'Lato', sans-serif;
 }
 
-button:hover {
+button:hover,
+button:focus {
     background: #5C6851;
     color: white;
 }
